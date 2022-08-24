@@ -70,6 +70,7 @@ jobs:
           push: false
           tags: ${{ env.TEST_COMPLIE }}
           file: ubuntu.dockerfile
+          target: compiler
           build-args: |
             ALINODE_VERSION=${{ env.ALINODE_VERSION }}
           load: true
@@ -80,6 +81,7 @@ jobs:
           build-args: |
             ALINODE_VERSION=${{ env.ALINODE_VERSION }}
           push: false
+          target: runtime
           tags: ${{ env.TEST_RUNTIME }}
           file: ubuntu.dockerfile
           load: true
@@ -95,6 +97,7 @@ jobs:
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta-core.outputs.tags }}
           labels: ${{ steps.meta-core.outputs.labels }}
+          target: core
           build-args: |
             ALINODE_VERSION=${{ env.ALINODE_VERSION }}
       - name: Build and push compiler
@@ -106,6 +109,7 @@ jobs:
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta-compiler.outputs.tags }}
           labels: ${{ steps.meta-compiler.outputs.labels }}
+          target: compiler
           build-args: |
             ALINODE_VERSION=${{ env.ALINODE_VERSION }}
       - name: Build and push runtime
@@ -117,6 +121,7 @@ jobs:
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta-runtime.outputs.tags }}
           labels: ${{ steps.meta-runtime.outputs.labels }}
+          target: runtime
           build-args: |
             ALINODE_VERSION=${{ env.ALINODE_VERSION }}
       - name: Update repo description
