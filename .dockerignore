@@ -1,0 +1,13 @@
+.git
+.github
+core/.gitkeep
+# 所有层级的 node_modules 文件夹
+**/node_modules
+test
+.vscode
+.gitignore
+ci
+*.md
+Makefile
+test.sh
+build.sh
