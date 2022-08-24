@@ -70,14 +70,14 @@ jobs:
           push: false
           tags: ${{ env.TEST_COMPLIE }}
           file: ubuntu.dockerfile
-          build-contexts: |
+          build-args: |
             ALINODE_VERSION=${{ env.ALINODE_VERSION }}
           load: true
       - name: Build runtime
         uses: docker/build-push-action@v3
         with:
           context: runtime
-          build-contexts: |
+          build-args: |
             ALINODE_VERSION=${{ env.ALINODE_VERSION }}
           push: false
           tags: ${{ env.TEST_RUNTIME }}
@@ -95,7 +95,7 @@ jobs:
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta-core.outputs.tags }}
           labels: ${{ steps.meta-core.outputs.labels }}
-          build-contexts: |
+          build-args: |
             ALINODE_VERSION=${{ env.ALINODE_VERSION }}
       - name: Build and push compiler
         uses: docker/build-push-action@v3
@@ -106,7 +106,7 @@ jobs:
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta-compiler.outputs.tags }}
           labels: ${{ steps.meta-compiler.outputs.labels }}
-          build-contexts: |
+          build-args: |
             ALINODE_VERSION=${{ env.ALINODE_VERSION }}
       - name: Build and push runtime
         uses: docker/build-push-action@v3
@@ -117,7 +117,7 @@ jobs:
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta-runtime.outputs.tags }}
           labels: ${{ steps.meta-runtime.outputs.labels }}
-          build-contexts: |
+          build-args: |
             ALINODE_VERSION=${{ env.ALINODE_VERSION }}
       - name: Update repo description
         uses: peter-evans/dockerhub-description@v2
