@@ -1,4 +1,4 @@
-const dockerRegistry = process.env.DOCKER_REPO + '/yunnysunny';
+const dockerRegistry = process.env.DOCKER_REPO + 'yunnysunny';
 exports.getImageName = function(imageName) {
 
     let tagName = process.env.CI_COMMIT_TAG;
