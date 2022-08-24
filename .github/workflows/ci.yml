@@ -36,7 +36,7 @@ jobs:
         uses: docker/metadata-action@v4
         with:
           images: |
-            yunnysunny/alinode-complier
+            yunnysunny/alinode-compiler
           tags: |
             type=ref,event=branch
             type=ref,event=pr
@@ -47,7 +47,7 @@ jobs:
         uses: docker/metadata-action@v4
         with:
           images: |
-            yunnysunny/alinode-complier
+            yunnysunny/alinode-runtime
           tags: |
             type=ref,event=branch
             type=ref,event=pr
