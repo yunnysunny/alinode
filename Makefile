@@ -1,4 +1,4 @@
-export IMAGE_VERSION=$(shell node ci/get_full_version.js) 
+# export IMAGE_VERSION=$(shell node ci/get_full_version.js) 
 
 check:
 	@echo "current tag $(CI_COMMIT_TAG)"
