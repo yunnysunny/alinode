@@ -9,7 +9,7 @@ ENV HOME /root
 RUN sed -i 's/archive.ubuntu.com/mirrors.ustc.edu.cn/g' /etc/apt/sources.list \
   && sed -i 's/security.ubuntu.com/mirrors.ustc.edu.cn/g' /etc/apt/sources.list \
   && apt-get update \
-  && apt-get install  --no-install-recommends  curl  gnupg ca-certificates openssl libssl-dev -y \
+  && apt-get install  --no-install-recommends  curl  ca-certificates -y \
   && rm -rf /var/lib/apt/lists/*
 ARG ALINODE_VERSION
 ENV ALINODE_VERSION=${ALINODE_VERSION}
