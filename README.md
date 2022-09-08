@@ -2,7 +2,7 @@
 
 ## 镜像说明
 
-### core
+### alinode-core
 
 集成了 alinode 和 yarn，是 alinode-compiler 和 alinode-runtinme 的基础镜像。
 
