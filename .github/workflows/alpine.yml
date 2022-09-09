@@ -97,7 +97,7 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           context: core
-          platforms: linux/amd64,linux/arm64
+          platforms: linux/amd64
           file: alpine.dockerfile
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta-core.outputs.tags }}
@@ -111,7 +111,7 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           context: core
-          platforms: linux/amd64,linux/arm64
+          platforms: linux/amd64
           file: alpine.dockerfile
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta-compiler.outputs.tags }}
@@ -125,7 +125,7 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           context: runtime
-          platforms: linux/amd64,linux/arm64
+          platforms: linux/amd64
           file: alpine.dockerfile
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta-runtime.outputs.tags }}

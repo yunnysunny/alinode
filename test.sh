@@ -5,4 +5,4 @@ export CI_COMMIT_TAG=vlatest
 # export IMAGE_VERSION=$(node ci/get_full_version.js)
 
 make build
-make test
+# make test
