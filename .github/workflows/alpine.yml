@@ -27,9 +27,8 @@ jobs:
         with:
           images: |
             yunnysunny/alinode-core
-          flavor: |
-            prefix: alpine-
           tags: |
+            prefix: alpine-
             type=ref,event=branch
             type=ref,event=pr
             type=semver,pattern={{version}}
@@ -40,9 +39,8 @@ jobs:
         with:
           images: |
             yunnysunny/alinode-compiler
-          flavor: |
-            prefix: alpine-
           tags: |
+            prefix: alpine-
             type=ref,event=branch
             type=ref,event=pr
             type=semver,pattern={{version}}
@@ -53,9 +51,8 @@ jobs:
         with:
           images: |
             yunnysunny/alinode-runtime
-          flavor: |
-            prefix: alpine-
           tags: |
+            prefix: alpine-
             type=ref,event=branch
             type=ref,event=pr
             type=semver,pattern={{version}}
