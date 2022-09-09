@@ -1,13 +1,13 @@
 ARG IMAGE_VERSION
 ARG VERSION_NAME_PREFIX
-FROM yunnysunny/alinode-compiler$:{IMAGE_SUFFIX}${IMAGE_VERSION} as build-stage
+FROM yunnysunny/alinode-compiler:${IMAGE_SUFFIX}${IMAGE_VERSION} as build-stage
 
 COPY package.json .
 COPY yarn.lock .
 
 RUN yarn install
 
-FROM yunnysunny/alinode-runtime$:{IMAGE_SUFFIX}${IMAGE_VERSION}
+FROM yunnysunny/alinode-runtime:${IMAGE_SUFFIX}${IMAGE_VERSION}
 RUN mkdir -p /app
 WORKDIR /app
 ARG APP_ID
