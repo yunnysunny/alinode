@@ -20,7 +20,7 @@
 
 ## 构建示例
 
-可以参见 [test/hello/test.sh](test/hello/test.sh)。
+可以参见 [test/hello/test.sh](https://github.com/yunnysunny/alinode/blob/master/test/hello/test.sh)。
 
 ## 版本说明
 
