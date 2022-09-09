@@ -5,14 +5,14 @@ ALINODE_VERSION=7.6.0
 OS_NAME=${OS_NAME:-ubuntu}
 BUILD_ARGS="--build-arg ALINODE_VERSION=${ALINODE_VERSION} \
 "
-IMAGE_SUFFIX=""
+export VERSION_NAME_PREFIX=""
 if [ "$OS_NAME" = "alpine" ] ; then
-    IMAGE_SUFFIX="-alpine"
+    export VERSION_NAME_PREFIX="alpine-"
 fi
 
-BUILD_TAG_CORE=$(node ci/get_image_build_tag.js core${IMAGE_SUFFIX})
-BUILD_TAG_COMPILER=$(node ci/get_image_build_tag.js compiler${IMAGE_SUFFIX})
-BUILD_TAG_RUNTIME=$(node ci/get_image_build_tag.js runtime${IMAGE_SUFFIX})
+BUILD_TAG_CORE=$(node ci/get_image_build_tag.js core)
+BUILD_TAG_COMPILER=$(node ci/get_image_build_tag.js compiler)
+BUILD_TAG_RUNTIME=$(node ci/get_image_build_tag.js runtime)
 
 if [ "$NEED_PUSH" = "1" ] ; then
     PLATFORM="--platform=linux/arm64,linux/amd64"

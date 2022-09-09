@@ -19,9 +19,9 @@ exports.getImageName = function(imageName) {
         versions.push(current);
         pervious = current;
     }
-
+    const VERSION_NAME_PREFIX = process.env.TAG_NAME_PREFIX;
     const tagsStr = versions.map(function(item) {
-        return `${dockerRegistry}/alinode-${imageName}:${item}`;
+        return `${dockerRegistry}/alinode-${imageName}:${VERSION_NAME_PREFIX}${item}`;
     });
     return tagsStr;
 };
