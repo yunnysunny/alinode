@@ -1,4 +1,4 @@
-name: buiding ubuntu
+name: ubuntu buiding
 
 on:
   push:

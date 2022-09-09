@@ -1,4 +1,4 @@
-name: building alpine
+name: alpine building
 
 on:
   push:
@@ -28,7 +28,7 @@ jobs:
           images: |
             yunnysunny/alinode-core
           tags: |
-            prefix: alpine-
+            prefix=alpine-
             type=ref,event=branch
             type=ref,event=pr
             type=semver,pattern={{version}}
@@ -40,7 +40,7 @@ jobs:
           images: |
             yunnysunny/alinode-compiler
           tags: |
-            prefix: alpine-
+            prefix=alpine-
             type=ref,event=branch
             type=ref,event=pr
             type=semver,pattern={{version}}
@@ -52,7 +52,7 @@ jobs:
           images: |
             yunnysunny/alinode-runtime
           tags: |
-            prefix: alpine-
+            prefix=alpine-
             type=ref,event=branch
             type=ref,event=pr
             type=semver,pattern={{version}}
