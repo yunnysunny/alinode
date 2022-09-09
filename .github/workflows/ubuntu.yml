@@ -71,6 +71,8 @@ jobs:
           tags: ${{ env.TEST_COMPLIE }}
           file: ubuntu.dockerfile
           target: compiler
+          cache-from: type=registry,ref=yunnysunny/alinode-compiler:buildcache
+          cache-to: type=registry,ref=yunnysunny/alinode-compiler:buildcache,mode=max
           build-args: |
             ALINODE_VERSION=${{ env.ALINODE_VERSION }}
           load: true
@@ -82,6 +84,8 @@ jobs:
             ALINODE_VERSION=${{ env.ALINODE_VERSION }}
           push: false
           target: runtime
+          cache-from: type=registry,ref=yunnysunny/alinode-runtime:buildcache
+          cache-to: type=registry,ref=yunnysunny/alinode-runtime:buildcache,mode=max
           tags: ${{ env.TEST_RUNTIME }}
           file: ubuntu.dockerfile
           load: true
@@ -98,6 +102,8 @@ jobs:
           tags: ${{ steps.meta-core.outputs.tags }}
           labels: ${{ steps.meta-core.outputs.labels }}
           target: core
+          cache-from: type=registry,ref=yunnysunny/alinode-core:buildcache
+          cache-to: type=registry,ref=yunnysunny/alinode-core:buildcache,mode=max
           build-args: |
             ALINODE_VERSION=${{ env.ALINODE_VERSION }}
       - name: Build and push compiler
@@ -110,6 +116,8 @@ jobs:
           tags: ${{ steps.meta-compiler.outputs.tags }}
           labels: ${{ steps.meta-compiler.outputs.labels }}
           target: compiler
+          cache-from: type=registry,ref=yunnysunny/alinode-compiler:buildcache
+          cache-to: type=registry,ref=yunnysunny/alinode-compiler:buildcache,mode=max
           build-args: |
             ALINODE_VERSION=${{ env.ALINODE_VERSION }}
       - name: Build and push runtime
@@ -122,6 +130,8 @@ jobs:
           tags: ${{ steps.meta-runtime.outputs.tags }}
           labels: ${{ steps.meta-runtime.outputs.labels }}
           target: runtime
+          cache-from: type=registry,ref=yunnysunny/alinode-runtime:buildcache
+          cache-to: type=registry,ref=yunnysunny/alinode-runtime:buildcache,mode=max
           build-args: |
             ALINODE_VERSION=${{ env.ALINODE_VERSION }}
       - name: Update core description

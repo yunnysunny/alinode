@@ -70,8 +70,10 @@ jobs:
           context: core
           push: false
           tags: ${{ env.TEST_COMPLIE }}
-          file: ubuntu.dockerfile
+          file: alpine.dockerfile
           target: compiler
+          cache-from: type=registry,ref=yunnysunny/alinode-compiler:alpine-buildcache
+          cache-to: type=registry,ref=yunnysunny/alinode-compiler:alpine-buildcache,mode=max
           build-args: |
             ALINODE_VERSION=${{ env.ALINODE_VERSION }}
           load: true
@@ -83,8 +85,10 @@ jobs:
             ALINODE_VERSION=${{ env.ALINODE_VERSION }}
           push: false
           target: runtime
+          cache-from: type=registry,ref=yunnysunny/alinode-runtime:alpine-buildcache
+          cache-to: type=registry,ref=yunnysunny/alinode-runtime:alpine-buildcache,mode=max
           tags: ${{ env.TEST_RUNTIME }}
-          file: ubuntu.dockerfile
+          file: alpine.dockerfile
           load: true
       - name: Test hello
         run: |
@@ -94,11 +98,13 @@ jobs:
         with:
           context: core
           platforms: linux/amd64,linux/arm64
-          file: ubuntu.dockerfile
+          file: alpine.dockerfile
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta-core.outputs.tags }}
           labels: ${{ steps.meta-core.outputs.labels }}
           target: core
+          cache-from: type=registry,ref=yunnysunny/alinode-core:alpine-buildcache
+          cache-to: type=registry,ref=yunnysunny/alinode-core:alpine-buildcache,mode=max
           build-args: |
             ALINODE_VERSION=${{ env.ALINODE_VERSION }}
       - name: Build and push compiler
@@ -106,11 +112,13 @@ jobs:
         with:
           context: core
           platforms: linux/amd64,linux/arm64
-          file: ubuntu.dockerfile
+          file: alpine.dockerfile
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta-compiler.outputs.tags }}
           labels: ${{ steps.meta-compiler.outputs.labels }}
           target: compiler
+          cache-from: type=registry,ref=yunnysunny/alinode-compiler:alpine-buildcache
+          cache-to: type=registry,ref=yunnysunny/alinode-compiler:alpine-buildcache,mode=max
           build-args: |
             ALINODE_VERSION=${{ env.ALINODE_VERSION }}
       - name: Build and push runtime
@@ -118,11 +126,13 @@ jobs:
         with:
           context: runtime
           platforms: linux/amd64,linux/arm64
-          file: ubuntu.dockerfile
+          file: alpine.dockerfile
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta-runtime.outputs.tags }}
           labels: ${{ steps.meta-runtime.outputs.labels }}
           target: runtime
+          cache-from: type=registry,ref=yunnysunny/alinode-runtime:alpine-buildcache
+          cache-to: type=registry,ref=yunnysunny/alinode-runtime:alpine-buildcache,mode=max
           build-args: |
             ALINODE_VERSION=${{ env.ALINODE_VERSION }}
       
