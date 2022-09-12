@@ -2,15 +2,15 @@
 
 ## 镜像说明
 
-### alinode-core
+### yunnysunny/alinode-core
 
 集成了 alinode 和 yarn，是 alinode-compiler 和 alinode-runtinme 的基础镜像。
 
-### alinode-compiler
+### yunnysunny/alinode-compiler
 
 集成了 gcc g++ python3 等开发包，可以用其来编译原生代码。
 
-### alinode-runtinme
+### yunnysunny/alinode-runtinme
 
 集成 alinode 日志收集功能，需要注入 `APP_ID` `APP_SECRET` 两个环境变量。
 
