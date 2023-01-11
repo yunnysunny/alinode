@@ -10,7 +10,7 @@
 
 集成了 gcc g++ python3 等开发包，可以用其来编译原生代码。
 
-### yunnysunny/alinode-runtinme
+### yunnysunny/alinode-runtime
 
 集成 alinode 日志收集功能，需要注入 `APP_ID` `APP_SECRET` 两个环境变量。
 
@@ -24,12 +24,12 @@
 
 ## 版本说明
 
-本项目的构建的镜像版本支持语义化版本号原则。在 github 上发布一个  `vx.y.z` tag 后，会自动生成 `x` `x.y` `x.y.z` 三个镜像版本。
+本项目的构建的镜像版本支持语义化版本号原则。在 github 上发布一个  `vx.y.z` tag 后，会自动生成  `x.y` `x.y.z` 三个镜像版本。
 
 | 镜像版本     | node 版本 | 备注       |
 | -------- | ------- | -------- |
-| 0        | 16      | 基于ubuntu |
-| alpine-0 | 16      | 基于alpine |
+| 0.2        | 16      | 基于ubuntu |
+| alpine-0.2 | 16      | 基于alpine |
 
 ### 关于 alpine 镜像
 
