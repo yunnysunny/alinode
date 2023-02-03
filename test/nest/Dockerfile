@@ -9,10 +9,8 @@ RUN yarn install --production
 
 FROM install-stage as build-stage
 
-RUN yarn install
-
 COPY . .
-RUN yarn build
+RUN yarn install && yarn build
 
 FROM yunnysunny/alinode-runtime:${IMAGE_SUFFIX}${IMAGE_VERSION}
 RUN mkdir -p /app
