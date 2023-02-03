@@ -92,6 +92,9 @@ jobs:
       - name: Test hello
         run: |
           make test-hello
+      - name: Test nest
+        run: |
+          make test-nest
       - name: Build and push core
         uses: docker/build-push-action@v3
         with:

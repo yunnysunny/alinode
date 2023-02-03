@@ -12,6 +12,9 @@ build:check
 test-hello:
 	cd test/hello && ./test.sh
 
+test-nest:
+	cd test/nest && ./test.sh
+
 test:check test-hello
 
 push:check
