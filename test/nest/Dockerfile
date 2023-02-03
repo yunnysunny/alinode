@@ -21,7 +21,7 @@ ARG APP_ID
 ENV APP_ID $APP_ID
 ARG APP_SECRET
 ENV APP_SECRET $APP_SECRET
-COPY --from=install-stage /tmp/dist ./dist
-COPY --from=build-stage /tmp/node_modules ./node_modules
+COPY --from=install-stage /tmp/node_modules ./node_modules
+COPY --from=build-stage /tmp/dist ./dist
 COPY ./package.json ./
 CMD ["node", "dist/main.js"]
