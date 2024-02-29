@@ -2,7 +2,7 @@ repo_name: yunnysunny/alinode
 report_id: c90d0211e9ca24298d95f87cb39b63f1
 version: 0.1
 repo_type: Public
-timestamp: '2024-02-05T15:58:09+00:00'
+timestamp: '2024-02-29T19:55:09+00:00'
 requested_by: yunnysunny
 provider: github
 branch: master
@@ -147,7 +147,7 @@ tools:
   last_updated_by: yunnysunny
   last_updated_on: 2023-02-03 05:14:00.000000000 Z
 - name: Prettier
-  description: 'Prettier is an opinionated code formatter. '
+  description: Prettier is an opinionated code formatter.
   website_url: https://prettier.io/
   version: 2.6.2
   license: MIT
@@ -161,7 +161,7 @@ tools:
   last_updated_by: yunnysunny
   last_updated_on: 2023-02-03 05:14:00.000000000 Z
 - name: SuperTest
-  description: 'A library for testing node.js HTTP servers '
+  description: A library for testing node.js HTTP servers
   website_url: https://www.npmjs.com/package/supertest
   version: 6.2.3
   license: MIT
